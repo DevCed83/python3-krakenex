@@ -146,11 +146,12 @@ class API(object):
 		print('RetrieveExport' not in urlpath)
 		return self.response.json(**self._json_options) if 'RetrieveExport' not in urlpath else self.write_binary_file(self.response.content, file_path)
 	
-	def write_binary_file(self, data, file_path):
-		with open(f'{file_path}/report.zip', 'wb') as file:
-			print('response binary')
-			file.write(data)
-		return 1
+
+    def write_binary_file(self, data, file_path):
+	with open(f'{file_path}/report.zip', 'wb') as file:
+		print('response binary')
+		file.write(data)
+	return 1
 			
 
 
