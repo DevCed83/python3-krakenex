@@ -143,8 +143,8 @@ class API(object):
 
         if self.response.status_code not in (200, 201, 202):
             self.response.raise_for_status()
-		print('RetrieveExport' not in urlpath)
-		return self.response.json(**self._json_options) if 'RetrieveExport' not in urlpath else self.write_binary_file(self.response.content, file_path)
+	print('RetrieveExport' not in urlpath)
+	return self.response.json(**self._json_options) if 'RetrieveExport' not in urlpath else self.write_binary_file(self.response.content, file_path)
 	
 
     def write_binary_file(self, data, file_path):
